@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Field {
+public class Field implements IField {
     private Set<Wheat> wheatSet = new HashSet<>();
 
     public Field(int FieldSizeX,int FieldSizeY){
@@ -16,10 +16,12 @@ public class Field {
         }
     }
 
+    @Override
     public Set<Wheat> getWheatSet() {
         return wheatSet;
     }
 
+    @Override
     public void setWheatSet(Set<Wheat> wheatSet) {
         this.wheatSet = wheatSet;
     }
