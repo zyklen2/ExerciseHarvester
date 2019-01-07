@@ -4,24 +4,23 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Field {
-    private Set<Wheat> wheatSet = new HashSet<>();
+public class Field implements IField{
+    private Set<Set<Wheat>> wheatSet = null;
 
     public Field(int FieldSizeX,int FieldSizeY){
+        wheatSet = new HashSet<>();
         for(int i=0;i<FieldSizeX;i++){
+            Set<Wheat> yWheatSet = new HashSet<>();
             for(int j=0;j<FieldSizeY;j++){
-                Wheat newWheat = new Wheat(i,j);
-                wheatSet.add(newWheat);
+                Wheat newWheat = new Wheat();
+                yWheatSet.add(newWheat);
             }
+            wheatSet.add(yWheatSet);
         }
     }
 
-    public Set<Wheat> getWheatSet() {
+    public Set<Set<Wheat>> getWheatSet() {
         return wheatSet;
-    }
-
-    public void setWheatSet(Set<Wheat> wheatSet) {
-        this.wheatSet = wheatSet;
     }
 
     /*public static void main(String... args) {
