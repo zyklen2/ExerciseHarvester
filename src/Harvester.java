@@ -55,7 +55,7 @@ public class Harvester implements IHarvester {
 
     @Override
     public void letDroneScanField(Field field){
-        fieldData= theDrone.scanField(field);
+        fieldData= theManagementComputer.ScanFieldAndAnalyse(field);
     }
 
     @Override
