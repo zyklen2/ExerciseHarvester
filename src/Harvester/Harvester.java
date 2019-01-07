@@ -30,9 +30,15 @@ public class Harvester implements IHarvester {
             Wheel newWheel = new Wheel(5,50,true, 500);
             wheels[i]=newWheel;
         }
-        for(int i=0;i<4;i++){
-            Light newLight = new Light(false);
-            lights[i]=newLight;
+        for(int i=0;i<6;i++){
+            if(i<4) {
+                DrivingEssentialLights newLight = new DrivingEssentialLights(false,false);
+                lights[i] = newLight;
+            }
+            else{
+                Light newLight = new Light(false);
+                lights[i] = newLight;
+            }
         }
 
     }
