@@ -1,3 +1,7 @@
+package Core;
+
+import Field.IWheat;
+
 import java.util.Map;
 
 public class PositionSorter implements IPositionSorter {

@@ -1,3 +1,10 @@
+package Harvester;
+
+import Core.IData;
+import Core.IPosition;
+import Field.Field;
+import Field.IWheat;
+
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +17,7 @@ public class Harvester implements IHarvester {
     private IEngine theEngine = new Engine(5000);
     private IWheel[] wheels = new Wheel[4];
     private ILight[] lights = new Light[6];
-    private IGrindSystem theGrindSystem = new GrindSystem;
+    private IGrindSystem theGrindSystem = new GrindSystem();
     private int posX=0;
     private int posY=0;
     FieldManagementComputer theManagementComputer;

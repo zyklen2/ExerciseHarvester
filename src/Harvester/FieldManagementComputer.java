@@ -1,3 +1,15 @@
+package Harvester;
+
+import Core.Data;
+import Core.IData;
+import Core.IPosition;
+import Core.PositionSorter;
+import Drone.Drone;
+import Drone.IDrone;
+import Field.IField;
+import Field.IWheat;
+import Field.WheatSorter;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;

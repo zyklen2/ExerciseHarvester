@@ -1,5 +1,7 @@
+package Field;
+
 import java.util.Random;
-public class Wheat implements IWheat{
+public class Wheat implements IWheat {
      Random rand = new Random();
      int countGrain = 0;
 

@@ -1,7 +1,14 @@
+package Drone;
+
+import Core.IPosition;
+import Core.Position;
+import Field.IField;
+import Field.IWheat;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class DroneLogic implements IDroneLogic{
+public class DroneLogic implements IDroneLogic {
 
     public Map<IPosition, IWheat> scanField(IField field){
         Map<IPosition, IWheat> ret = new HashMap<>();

@@ -1,3 +1,5 @@
+package Harvester;
+
 public class Wheel implements IWheel{
     float width = 0;
     float radius = 0;

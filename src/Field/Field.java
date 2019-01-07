@@ -1,8 +1,7 @@
-import java.util.HashMap;
+package Field;
+
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Field implements IField{
     private Set<Set<IWheat>> wheatSet = null;

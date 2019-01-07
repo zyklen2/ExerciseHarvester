@@ -1,3 +1,5 @@
+package Core;
+
 public interface IPosition extends Comparable<IPosition> {
     int getPosX();
 

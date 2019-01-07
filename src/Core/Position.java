@@ -1,3 +1,5 @@
+package Core;
+
 public class Position implements IPosition {
     private int posX;
     private int posY;

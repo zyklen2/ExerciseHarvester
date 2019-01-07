@@ -1,3 +1,5 @@
+package Harvester;
+
 public class Light implements ILight {
     boolean onOff=false;
 

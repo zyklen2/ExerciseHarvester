@@ -1,3 +1,7 @@
+package Core;
+
+import Field.IWheat;
+
 import java.util.Comparator;
 import java.util.Map;
 

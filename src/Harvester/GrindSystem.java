@@ -1,3 +1,5 @@
+package Harvester;
+
 public class GrindSystem implements IGrindSystem {
     private float length = 0;
     private float width = 0;
