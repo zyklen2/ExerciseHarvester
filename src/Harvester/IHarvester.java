@@ -2,7 +2,7 @@ package Harvester;
 
 import Core.IData;
 import Core.IPosition;
-import Field.Field;
+import Field.IField;
 import Field.IWheat;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +18,7 @@ public interface IHarvester {
 
     int getHorsePower();
 
-    void letDroneScanField(Field field);
+    void letDroneScanField(IField field);
 
     List<IWheat> getSortedField();
 
