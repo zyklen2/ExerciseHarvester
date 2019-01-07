@@ -13,6 +13,6 @@ public class Wheat implements IWheat{
 
     @Override
     public int compareTo(IWheat otherWheat){
-         return otherWheat.getGrainCount() - this.getGrainCount();
+         return this.getGrainCount() - otherWheat.getGrainCount();
     }
 }

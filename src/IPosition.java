@@ -1,4 +1,4 @@
-public interface IPosition {
+public interface IPosition extends Comparable<IPosition> {
     int getPosX();
 
     void setPosX(int posX);
