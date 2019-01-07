@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Map;
 
-public class Harvester implements IHarvester, IHarvester {
+public class Harvester implements IHarvester {
     private float length= 0;
     private float height= 0;
     private float width= 0;
