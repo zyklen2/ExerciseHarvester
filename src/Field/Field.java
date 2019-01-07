@@ -1,25 +1,39 @@
 package Field;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.stream.Stream;
 
 public class Field implements IField{
-    private Set<Set<IWheat>> wheatSet = null;
+    private final int fieldSizeX;
+    private final int fieldSizeY;
+    private IWheat[][] wheatArray = null;
 
-    public Field(int FieldSizeX,int FieldSizeY){
-        wheatSet = new HashSet<>();
-        for(int i=0;i<FieldSizeX;i++){
-            Set<IWheat> yWheatSet = new HashSet<>();
-            for(int j=0;j<FieldSizeY;j++){
+    public Field(int fieldSizeX,int fieldSizeY){
+        this.fieldSizeX = fieldSizeX;
+        this.fieldSizeY = fieldSizeX;
+        wheatArray = new IWheat[fieldSizeX][fieldSizeY];
+        for(int i=0;i<fieldSizeX;i++){
+            IWheat[] yWheatArray = new IWheat[fieldSizeY];
+            for(int j=0;j<fieldSizeY;j++){
                 Wheat newWheat = new Wheat();
-                yWheatSet.add(newWheat);
+                yWheatArray[j]= newWheat;
             }
-            wheatSet.add(yWheatSet);
+            wheatArray[i] = yWheatArray;
         }
     }
 
-    public Set<Set<IWheat>> getWheatSet() {
-        return wheatSet;
+    @Override
+    public int getFieldSizeX() {
+        return fieldSizeX;
+    }
+
+    @Override
+    public int getFieldSizeY() {
+        return fieldSizeY;
+    }
+
+    @Override
+    public IWheat[][] getWheatArray() {
+        return wheatArray;
     }
 
     /*public static void main(String... args) {

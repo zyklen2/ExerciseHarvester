@@ -7,20 +7,21 @@ import Field.IWheat;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DroneLogic implements IDroneLogic {
 
     public Map<IPosition, IWheat> scanField(IField field){
-        Map<IPosition, IWheat> ret = new HashMap<>();
+        Stream<AbstractMap.SimpleEntry<IPosition, IWheat>> ret = Stream.of();
         int xPos = 0;
-        for(Set<IWheat> x : field.getWheatSet()){
+        for(IWheat[] x : field.getWheatArray()){
             int yPos = 0;
             for(IWheat y : x){
-                ret.put(new Position(xPos, yPos), y);
+                ret = Stream.concat(ret, Stream.of( new AbstractMap.SimpleEntry<>(new Position(xPos, yPos), y)));
                 yPos++;
             }
             xPos++;
         }
-        return ret;
+        return ret.collect(Collectors.toMap(entry->entry.getKey(), entry->entry.getValue()));
     }
 }

@@ -1,7 +1,10 @@
 package Field;
 
 import java.util.Set;
+import java.util.stream.Stream;
 
 public interface IField {
-    Set<Set<IWheat>> getWheatSet();
+    IWheat[][] getWheatArray();
+    int getFieldSizeX();
+    int getFieldSizeY();
 }
