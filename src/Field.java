@@ -5,12 +5,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Field implements IField{
-    private Set<Set<Wheat>> wheatSet = null;
+    private Set<Set<IWheat>> wheatSet = null;
 
     public Field(int FieldSizeX,int FieldSizeY){
         wheatSet = new HashSet<>();
         for(int i=0;i<FieldSizeX;i++){
-            Set<Wheat> yWheatSet = new HashSet<>();
+            Set<IWheat> yWheatSet = new HashSet<>();
             for(int j=0;j<FieldSizeY;j++){
                 Wheat newWheat = new Wheat();
                 yWheatSet.add(newWheat);
@@ -19,7 +19,7 @@ public class Field implements IField{
         }
     }
 
-    public Set<Set<Wheat>> getWheatSet() {
+    public Set<Set<IWheat>> getWheatSet() {
         return wheatSet;
     }
 

@@ -12,8 +12,8 @@ public class Drone implements IDrone {
     }
 
     @Override
-    public Map<IPosition, IWheat> scanField(Field fieldToScan){
-        return theDroneLogic.getMapFromField(fieldToScan);
+    public Map<IPosition, IWheat> scanField(IField fieldToScan){
+        return theDroneLogic.scanField(fieldToScan);
     }
 
     @Override

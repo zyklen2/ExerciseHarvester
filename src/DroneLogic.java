@@ -1,17 +1,19 @@
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class DroneLogic implements IDroneLogic{
 
-    public List<IWheat> sortField(Map<IPosition, IWheat> wheatMap) {
-        return wheatMap.entrySet().stream()
-                .sorted(new WheatPositionSorter()).map(Map.Entry::getValue)
-                .collect(Collectors.toList());
-    }
-
-    public Map<IPosition, IWheat> getMapFromField(Field field){
-
+    public Map<IPosition, IWheat> scanField(IField field){
+        Map<IPosition, IWheat> ret = new HashMap<>();
+        int xPos = 0;
+        for(Set<IWheat> x : field.getWheatSet()){
+            int yPos = 0;
+            for(IWheat y : x){
+                ret.put(new Position(xPos, yPos), y);
+                yPos++;
+            }
+            xPos++;
+        }
+        return ret;
     }
 }

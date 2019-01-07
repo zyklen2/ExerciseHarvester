@@ -1,7 +1,7 @@
 import java.util.Map;
 
 public interface IDrone {
-    Map<IPosition, IWheat> scanField(Field fieldToScan);
+    Map<IPosition, IWheat> scanField(IField fieldToScan);
 
     int getPosX();
 
