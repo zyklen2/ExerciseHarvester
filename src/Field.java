@@ -3,7 +3,15 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Field {
-    private Map<Integer, String> hashMap = new HashMap<>();
+    private Map<Integer, Wheat> hashMap = new HashMap<>();
+
+    public Field(int FieldSizeX,int FieldSizeY){
+        for(int i=0;i<FieldSizeX;i++){
+            for(int j=0;j<FieldSizeY;j++){
+
+            }
+        }
+    }
 
         /*public static void main(String... args) {
             Application application = new Application();
@@ -11,10 +19,7 @@ public class Field {
             application.filterByKey();
             application.filterByValue();
             application.filterByKeyAndValue();
-        }*/
-
-
-
+        }
     public void filterByKey() {
         System.out.println("--- filterByKey ---");
 
@@ -49,5 +54,5 @@ public class Field {
                 .collect(Collectors.toMap(map -> map.getKey(), map -> map.getValue()));
 
         System.out.println("result : " + result);
-    }
+    }*/
 }
