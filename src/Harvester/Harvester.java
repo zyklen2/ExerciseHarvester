@@ -107,6 +107,9 @@ public class Harvester implements IHarvester {
         if(lightNumber<=lights.length) {
             return lights[lightNumber].isOnOff();
         }
+        else{
+            return false;
+        }
     }
 
     @Override
