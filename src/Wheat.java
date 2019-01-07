@@ -7,12 +7,12 @@ public class Wheat implements IWheat{
          int grainCount = rand.nextInt(500) + 100;
      }
 
-     public int GetGrainCount(){
+     public int getGrainCount(){
           return countGrain;
      }
 
     @Override
     public int compareTo(IWheat otherWheat){
-         return 0;
+         return otherWheat.getGrainCount() - this.getGrainCount();
     }
 }
