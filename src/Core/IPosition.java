@@ -8,4 +8,6 @@ public interface IPosition extends Comparable<IPosition> {
     int getPosY();
 
     void setPosY(int posY);
+
+    int getHash();
 }

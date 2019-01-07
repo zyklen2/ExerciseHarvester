@@ -31,6 +31,18 @@ public class Position implements IPosition {
 
     @Override
     public int compareTo(IPosition otherPos){
-        return otherPos.getPosX() + otherPos.getPosY() - this.getPosX() - this.getPosY();
+        if(this.getHash() == otherPos.getHash()){
+            return 0;
+        }else {
+            int ret = otherPos.getPosX() + otherPos.getPosY() - this.getPosX() - this.getPosY();
+            if(ret == 0){
+                ret = Integer.MIN_VALUE;
+            }
+            return ret;
+        }
+    }
+
+    public int getHash(){
+        return (7 + posX)*7 + posY;
     }
 }

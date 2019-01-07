@@ -3,6 +3,7 @@ package Harvester;
 import Core.Data;
 import Core.IData;
 import Core.IPosition;
+import Core.Position;
 import Core.PositionSorter;
 import Drone.Drone;
 import Drone.IDrone;
@@ -30,6 +31,13 @@ public class FieldManagementComputer {
         return wheatMap.entrySet().stream()
                 .sorted(new WheatSorter().reversed().thenComparing(new PositionSorter())).map(Map.Entry::getValue)
                 .collect(Collectors.toList());
+    }
+
+    public IWheat findWheatByPos(int posX, int posY, Map<IPosition, IWheat> wheatMap ){
+        Position pos = new Position(posX, posY);
+        return wheatMap.entrySet().stream()
+                .filter(entry -> entry.getKey().getHash() == pos.getHash())
+                .findFirst().get().getValue();
     }
 
 }
