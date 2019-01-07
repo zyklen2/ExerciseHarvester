@@ -7,7 +7,7 @@ public class DroneLogic implements IDroneLogic{
 
     public List<IWheat> sortField(Map<IPosition, IWheat> wheatMap) {
         return wheatMap.entrySet().stream()
-                .thenComparing(wheat -> wheat.GetPosX() + wheat.GetPosY()))
+                .sorted(new WheatPositionSorter()).map(Map.Entry::getValue)
                 .collect(Collectors.toList());
     }
 

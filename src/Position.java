@@ -26,4 +26,9 @@ public class Position implements IPosition {
     public void setPosY(int posY) {
         this.posY = posY;
     }
+
+    @Override
+    public int compareTo(IPosition otherPos){
+        return otherPos.getPosX() + otherPos.getPosY() - this.getPosX() - this.getPosY();
+    }
 }
