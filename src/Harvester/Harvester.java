@@ -1,10 +1,9 @@
 package Harvester;
-
 import Core.IData;
 import Core.IPosition;
 import Field.Field;
 import Field.IWheat;
-
+import Field.Wheat;
 import java.util.List;
 import java.util.Map;
 
@@ -103,6 +102,7 @@ public class Harvester implements IHarvester {
         return fieldData;
     }
 
+    @Override
     public boolean LightIsOn(int lightNumber){
         if(lightNumber<=lights.length) {
             return lights[lightNumber].isOnOff();
@@ -127,5 +127,10 @@ public class Harvester implements IHarvester {
     @Override
     public void turnGrindSystemOnOff(boolean on){
         theGrindSystem.setOn(on);
+    }
+
+    @Override
+    public IWheat findWheatByPosition(int searchPosX, int searchPosY){
+        return theManagementComputer.findWheatByPos(searchPosX,searchPosY,fieldData.getFieldMap());
     }
 }

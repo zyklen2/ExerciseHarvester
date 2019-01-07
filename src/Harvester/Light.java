@@ -3,6 +3,7 @@ package Harvester;
 public class Light implements ILight {
     boolean onOff=false;
 
+    public Light(){}
     public Light(boolean onOff) {
         this.onOff = onOff;
     }

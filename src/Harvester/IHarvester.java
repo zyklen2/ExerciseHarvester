@@ -4,7 +4,6 @@ import Core.IData;
 import Core.IPosition;
 import Field.Field;
 import Field.IWheat;
-
 import java.util.List;
 import java.util.Map;
 
@@ -35,9 +34,13 @@ public interface IHarvester {
 
     IData getFieldData();
 
+    boolean LightIsOn(int lightNumber);
+
     void turnLightsOnOff(boolean on);
 
     void GrindSystemIsOn();
 
     void turnGrindSystemOnOff(boolean on);
+
+    IWheat findWheatByPosition(int searchPosX, int searchPosY);
 }
