@@ -3,12 +3,15 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Field {
-    private Map<Integer, Wheat> hashMap = new HashMap<>();
+    long wheatCount = 0;
+    private Map<Long, Wheat> hashMap = new HashMap<>();
 
     public Field(int FieldSizeX,int FieldSizeY){
         for(int i=0;i<FieldSizeX;i++){
             for(int j=0;j<FieldSizeY;j++){
-
+                Wheat newWheat = new Wheat(i,j);
+                hashMap.put(wheatCount,newWheat);
+                wheatCount++;
             }
         }
     }
