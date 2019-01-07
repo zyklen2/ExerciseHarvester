@@ -1,17 +1,48 @@
-public class Drone implements IDrone{
+import java.util.List;
+import java.util.Map;
+
+public class Drone implements IDrone {
     int posX=0;
     int posY=0;
     float batteryPercentage=0;
-    boolean fieldScanned=false;
-    int wheatToScan=0;
-    int scannedWheat=0;
+    DroneLogic theDroneLogic = new DroneLogic();
 
     public Drone(float batteryPercentage){
         this.batteryPercentage=batteryPercentage;
     }
 
-    public scanField(Field fieldToScan){
-
+    @Override
+    public Map<IPosition, IWheat> scanField(Field fieldToScan){
+        return theDroneLogic.getMapFromField(fieldToScan);
     }
 
+    @Override
+    public int getPosX() {
+        return posX;
+    }
+
+    @Override
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    @Override
+    public int getPosY() {
+        return posY;
+    }
+
+    @Override
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+
+    @Override
+    public float getBatteryPercentage() {
+        return batteryPercentage;
+    }
+
+    @Override
+    public void setBatteryPercentage(float batteryPercentage) {
+        this.batteryPercentage = batteryPercentage;
+    }
 }
