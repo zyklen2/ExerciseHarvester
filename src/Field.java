@@ -1,22 +1,30 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Field {
-    long wheatCount = 0;
-    private Map<Long, Wheat> hashMap = new HashMap<>();
+    private Set<Wheat> wheatSet = new HashSet<>();
 
     public Field(int FieldSizeX,int FieldSizeY){
         for(int i=0;i<FieldSizeX;i++){
             for(int j=0;j<FieldSizeY;j++){
                 Wheat newWheat = new Wheat(i,j);
-                hashMap.put(wheatCount,newWheat);
-                wheatCount++;
+                wheatSet.add(newWheat);
             }
         }
     }
 
-        /*public static void main(String... args) {
+    public Set<Wheat> getWheatSet() {
+        return wheatSet;
+    }
+
+    public void setWheatSet(Set<Wheat> wheatSet) {
+        this.wheatSet = wheatSet;
+    }
+
+    /*public static void main(String... args) {
             Application application = new Application();
             application.init();
             application.filterByKey();
