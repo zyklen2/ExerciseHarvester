@@ -9,8 +9,8 @@ public class FieldManagementComputer {
     }
 
     public IData ScanFieldAndAnalyse(Field field){
-        Map<IPosition, IWheat> theFieldMap = ;
-        List<IWheat> theWheatList = theDroneLogic.sortField(theFieldMap);
+        Map<IPosition, IWheat> theFieldMap = theDrone.scanField(field);
+        List<IWheat> theWheatList = sortField(theFieldMap);
         IData data = new Data(theWheatList,theFieldMap);
         return theData;
     }
