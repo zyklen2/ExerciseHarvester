@@ -17,4 +17,20 @@ public interface IHarvester {
     List<IWheat> getSortedField();
 
     Map<IPosition, IWheat> getFieldMap();
+
+    float getLength();
+
+    float getHeight();
+
+    float getWidth();
+
+    float getWeight();
+
+    IData getFieldData();
+
+    void turnLightsOnOff(boolean on);
+
+    void GrindSystemIsOn();
+
+    void turnGrindSystemOnOff(boolean on);
 }

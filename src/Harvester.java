@@ -1,22 +1,25 @@
 import java.util.List;
 import java.util.Map;
 
-public class Harvester implements IHarvester {
+public class Harvester implements IHarvester, IHarvester {
     private float length= 0;
     private float height= 0;
     private float width= 0;
+    private float weight = 0;
     private IData fieldData;
     private IEngine theEngine = new Engine(5000);
     private IWheel[] wheels = new Wheel[4];
     private ILight[] lights = new Light[6];
+    private IGrindSystem theGrindSystem = new GrindSystem;
     private int posX=0;
     private int posY=0;
     FieldManagementComputer theManagementComputer;
 
-    public Harvester(float length, float height, float width) {
+    public Harvester(float length, float height, float width, float weight) {
         this.length = length;
         this.height = height;
         this.width = width;
+        this.weight = weight;
         for(int i=0;i<4;i++){
             Wheel newWheel = new Wheel(5,50,true, 500);
             wheels[i]=newWheel;
@@ -66,5 +69,53 @@ public class Harvester implements IHarvester {
     @Override
     public Map<IPosition, IWheat> getFieldMap(){
         return fieldData.getFieldMap();
+    }
+
+    @Override
+    public float getLength() {
+        return length;
+    }
+
+    @Override
+    public float getHeight() {
+        return height;
+    }
+
+    @Override
+    public float getWidth() {
+        return width;
+    }
+
+    @Override
+    public float getWeight() {
+        return weight;
+    }
+
+    @Override
+    public IData getFieldData() {
+        return fieldData;
+    }
+
+    public boolean LightIsOn(int lightNumber){
+        if(lightNumber<=lights.length) {
+            return lights[lightNumber].isOnOff();
+        }
+    }
+
+    @Override
+    public void turnLightsOnOff(boolean on){
+        for(int i=0;i<6;i++){
+            lights[i].setOnOff(on);
+        }
+    }
+
+    @Override
+    public void GrindSystemIsOn(){
+        theGrindSystem.isOn();
+    }
+
+    @Override
+    public void turnGrindSystemOnOff(boolean on){
+        theGrindSystem.setOn(on);
     }
 }
