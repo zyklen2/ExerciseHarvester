@@ -1,21 +1,21 @@
 package Field;
 
+//A field, used to store IWheat-objects (Association/Interfaces)
 public class Field implements IField {
     private final int fieldSizeX;
     private final int fieldSizeY;
     private IWheat[][] wheatArray = null;
 
+    //Generates field with IWheat-objects and stores them in 2D array
     public Field(int fieldSizeX, int fieldSizeY) {
         this.fieldSizeX = fieldSizeX;
         this.fieldSizeY = fieldSizeY;
         wheatArray = new IWheat[fieldSizeX][fieldSizeY];
         for (int i = 0; i < fieldSizeX; i++) {
-            IWheat[] yWheatArray = new IWheat[fieldSizeY];
             for (int j = 0; j < fieldSizeY; j++) {
                 Wheat newWheat = new Wheat();
-                yWheatArray[j] = newWheat;
+                wheatArray[i][j] = newWheat;
             }
-            wheatArray[i] = yWheatArray;
         }
     }
 

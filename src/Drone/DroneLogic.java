@@ -9,7 +9,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-//Logic for scanning field (Interfaces/Overloading/Datastructures)
+//Logic for scanning field (Interfaces/Overloading/Datastructure), should be used in Drone (Association)
 public class DroneLogic implements IDroneLogic {
 
     //Scans field, just extracts wheatArray and returns scanField(IWheat[][]) (Overloading)
