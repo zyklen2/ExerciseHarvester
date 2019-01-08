@@ -42,7 +42,6 @@ public class Harvester implements IHarvester {
                 lights[i] = newLight;
             }
         }
-        theManagementComputer = new FieldManagementComputer();
     }
 
     @Override

@@ -1,6 +1,6 @@
 package Harvester;
 
-public class DrivingEssentialLights extends Light implements Harvester.IDrivingEssentialLights {
+public class DrivingEssentialLights extends Light implements IDrivingEssentialLights {
     private boolean fogMode=false;
     public DrivingEssentialLights(boolean onOff,boolean fogMode) {
         this.onOff = onOff;
