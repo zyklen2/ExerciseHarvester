@@ -5,13 +5,15 @@ import Field.IField;
 import Field.IWheat;
 import java.util.List;
 import java.util.Map;
+import Drone.Drone;
+import Drone.IDrone;
 
 public class Harvester implements IHarvester {
     private float length= 0;
     private float height= 0;
     private float width= 0;
     private float weight = 0;
-    private IData fieldData;
+    private IData fieldData;  //Auslagerung von verschiedenen zusammengehörigen Daten zu IData um den Umgang zu vereinfachen
     private IEngine theEngine = new Engine(5000);
     private IWheel[] wheels = new Wheel[4];
     private ILight[] lights = new Light[6];
@@ -20,18 +22,25 @@ public class Harvester implements IHarvester {
     private int posY=0;
     private IFieldManagementComputer theManagementComputer;
 
-    public Harvester(float length, float height, float width, float weight) {
+    public Harvester(float length, float height, float width, float weight,Drone theDrone) {
         this.length = length;
         this.height = height;
         this.width = width;
         this.weight = weight;
+        theManagementComputer = new FieldManagementComputer(theDrone);
         for(int i=0;i<4;i++){
             Wheel newWheel = new Wheel(5,50,true, 500);
             wheels[i]=newWheel;
         }
-        for(int i=0;i<4;i++){
-            Light newLight = new Light(false);
-            lights[i]=newLight;
+        for(int i=0;i<6;i++){
+            if(i<4) {
+                DrivingEssentialLights newLight = new DrivingEssentialLights(false,false);
+                lights[i] = newLight;
+            }
+            else{
+                Light newLight = new Light(false);
+                lights[i] = newLight;
+            }
         }
         theManagementComputer = new FieldManagementComputer();
     }

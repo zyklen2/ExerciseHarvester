@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 
 public class FieldManagementComputer implements IFieldManagementComputer {
     private IDrone theDrone;
-    public FieldManagementComputer() {
-        theDrone = new Drone(100);
+    public FieldManagementComputer(Drone theDrone) {
+        this.theDrone=theDrone;
     }
 
     @Override

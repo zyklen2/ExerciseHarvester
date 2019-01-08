@@ -13,6 +13,13 @@ public class Wheel implements IWheel{
         this.pumpedUpBar = pumpedUpBar;
     }
 
+    public Wheel(boolean pumpedUp,float pumpedUpBar){ //<-- Überladen um die erstellung eines Standartrads zu ermöglichen
+        width = 5;
+        radius = 50;
+        this.pumpedUp = pumpedUp;
+        this.pumpedUpBar = pumpedUpBar;
+    }
+
     public float getWidth() {
         return width;
     }

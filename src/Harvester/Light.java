@@ -1,15 +1,11 @@
 package Harvester;
 
 public class Light implements ILight {
-    private boolean onOff=false;
+    boolean onOff=false;
 
-    //Overloading
-    public Light(boolean isOn){
-        onOff = isOn;
-    }
-
-    public Light(){
-
+    public Light(){}
+    public Light(boolean onOff) {
+        this.onOff = onOff;
     }
 
     @Override
