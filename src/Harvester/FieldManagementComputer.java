@@ -11,6 +11,7 @@ import Field.IField;
 import Field.IWheat;
 import Field.WheatSorter;
 
+import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -24,14 +25,20 @@ public class FieldManagementComputer implements IFieldManagementComputer {
 
     @Override
     public IData ScanFieldAndAnalyse(IField field){
+        long now = System.nanoTime();
         Map<IPosition, IWheat> theFieldMap = theDrone.scanField(field);
-        List<IWheat> theWheatList = sortWheatField(theFieldMap);
+        System.out.println("Scan Field: " + (System.nanoTime() - now)/100000);
+
+        now = System.nanoTime();
+        List<Map.Entry<IPosition,IWheat>> theWheatList = sortWheatField(theFieldMap);
+        System.out.println("Sort Field: " + (System.nanoTime() - now)/100000);
         return new Data(theWheatList,theFieldMap);
     }
 
-    private List<IWheat> sortWheatField(Map<IPosition, IWheat> wheatMap){
+    private List sortWheatField(Map<IPosition, IWheat> wheatMap){
         return wheatMap.entrySet().stream()
-                .sorted(new WheatSorter().reversed().thenComparing(new PositionSorter())).map(Map.Entry::getValue)
+                .sorted(new WheatSorter().reversed().thenComparing(new PositionSorter()))
+                .map(entry->new AbstractMap.SimpleEntry(entry.getKey(), entry.getValue()))
                 .collect(Collectors.toList());
     }
 

@@ -7,16 +7,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Data implements IData {
-    private List<IWheat> sortedWheatList;
+    private List<Map.Entry<IPosition,IWheat>> sortedWheatList;
     private Map<IPosition, IWheat> fieldMap;
 
-    public Data(List<IWheat> sortedWheatList, Map<IPosition, IWheat> fieldMap) {
+    public Data(List<Map.Entry<IPosition,IWheat>> sortedWheatList, Map<IPosition, IWheat> fieldMap) {
         this.sortedWheatList = sortedWheatList;
         this.fieldMap = fieldMap;
     }
 
     @Override
-    public List<IWheat> getSortedWheatList() {
+    public List<Map.Entry<IPosition,IWheat>> getSortedWheatList() {
         return sortedWheatList;
     }
 
@@ -28,8 +28,10 @@ public class Data implements IData {
     @Override
     public String toString(){
         return "List of sorted wheat:"
-                + String.join("\n",sortedWheatList.stream().map(wheat->wheat.toString()).collect(Collectors.toList()))
-                +"Pos/wheat-map: " + String.join("\n", fieldMap.entrySet().stream()
+                + String.join("\n",sortedWheatList.stream().map(entry->"Pos: " + entry.getKey()
+                + " (Sum: " + Integer.sum(entry.getKey().getPosY(), entry.getKey().getPosX()) +")"
+                +"\n\t"+ entry.getValue().toString()).collect(Collectors.toList()))
+                +"\nPos/wheat-map: " + String.join("\n", fieldMap.entrySet().stream()
                 .map(entry-> "Pos: " + entry.getKey().toString() + "\nWheat: " + entry.getValue().toString() ).collect(Collectors.toList()));
     }
 }

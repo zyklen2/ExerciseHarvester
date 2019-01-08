@@ -20,7 +20,7 @@ public interface IHarvester {
 
     void letDroneScanField(IField field);
 
-    List<IWheat> getSortedField();
+    List<Map.Entry<IPosition,IWheat>> getSortedField();
 
     Map<IPosition, IWheat> getFieldMap();
 

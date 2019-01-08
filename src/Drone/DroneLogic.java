@@ -21,16 +21,16 @@ public class DroneLogic implements IDroneLogic {
     //Scans 2D field and creates a map of IPosition from position in array and matching IWheat (Datastructures)
     @Override
     public Map<IPosition, IWheat> scanField(IWheat[][] wheatArray){
-        Stream<AbstractMap.SimpleEntry<IPosition, IWheat>> ret = Stream.of();
+        HashMap<IPosition, IWheat> ret = new HashMap<>();
         int xPos = 0;
         for(IWheat[] x : wheatArray){
             int yPos = 0;
             for(IWheat y : x){
-                ret = Stream.concat(ret, Stream.of( new AbstractMap.SimpleEntry<>(new Position(xPos, yPos), y)));
+                ret.put(new Position(xPos, yPos), y);
                 yPos++;
             }
             xPos++;
         }
-        return ret.collect(Collectors.toMap(entry->entry.getKey(), entry->entry.getValue()));
+        return ret;
     }
 }
