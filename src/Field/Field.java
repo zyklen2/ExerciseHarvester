@@ -1,25 +1,37 @@
 package Field;
 
-import java.util.HashSet;
-import java.util.Set;
+//A field, used to store IWheat-objects (Association/Interfaces)
+public class Field implements IField {
+    private final int fieldSizeX;
+    private final int fieldSizeY;
+    private IWheat[][] wheatArray = null;
 
-public class Field implements IField{
-    private Set<Set<IWheat>> wheatSet = null;
-
-    public Field(int FieldSizeX,int FieldSizeY){
-        wheatSet = new HashSet<>();
-        for(int i=0;i<FieldSizeX;i++){
-            Set<IWheat> yWheatSet = new HashSet<>();
-            for(int j=0;j<FieldSizeY;j++){
+    //Generates field with IWheat-objects and stores them in 2D array
+    public Field(int fieldSizeX, int fieldSizeY) {
+        this.fieldSizeX = fieldSizeX;
+        this.fieldSizeY = fieldSizeY;
+        wheatArray = new IWheat[fieldSizeX][fieldSizeY];
+        for (int i = 0; i < fieldSizeX; i++) {
+            for (int j = 0; j < fieldSizeY; j++) {
                 Wheat newWheat = new Wheat();
-                yWheatSet.add(newWheat);
+                wheatArray[i][j] = newWheat;
             }
-            wheatSet.add(yWheatSet);
         }
     }
 
-    public Set<Set<IWheat>> getWheatSet() {
-        return wheatSet;
+    @Override
+    public int getFieldSizeX() {
+        return fieldSizeX;
+    }
+
+    @Override
+    public int getFieldSizeY() {
+        return fieldSizeY;
+    }
+
+    @Override
+    public IWheat[][] getWheatArray() {
+        return wheatArray;
     }
 
     /*public static void main(String... args) {

@@ -1,5 +1,6 @@
 package Core;
 
+//Class for positioning, implements IPosition, which extends Comparable (Interfaces/Generalization/Overwrite)
 public class Position implements IPosition {
     private int posX;
     private int posY;
@@ -29,6 +30,9 @@ public class Position implements IPosition {
         this.posY = posY;
     }
 
+    //Implements abstract method from Comparable
+    //It returns an int according to the coordinates of both positions, if same 0,
+    //if result is Integer.MIN_VALUE, the objects are not the same, but the compareTo-method would return 0
     @Override
     public int compareTo(IPosition otherPos){
         if(this.getHash() == otherPos.getHash()){
@@ -36,12 +40,13 @@ public class Position implements IPosition {
         }else {
             int ret = otherPos.getPosX() + otherPos.getPosY() - this.getPosX() - this.getPosY();
             if(ret == 0){
-                ret = Integer.MIN_VALUE;
+                return Integer.MIN_VALUE;
             }
             return ret;
         }
     }
 
+    //Gets int-hash from object
     public int getHash(){
         return (7 + posX)*7 + posY;
     }

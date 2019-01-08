@@ -1,7 +1,8 @@
 package Field;
 
-import java.util.Set;
-
+//Interface for fields to store IWheat-objects
 public interface IField {
-    Set<Set<IWheat>> getWheatSet();
+    IWheat[][] getWheatArray();
+    int getFieldSizeX();
+    int getFieldSizeY();
 }

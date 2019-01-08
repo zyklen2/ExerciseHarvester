@@ -1,14 +1,18 @@
 package Field;
 
 import java.util.Random;
-public class Wheat implements IWheat {
-     Random rand = new Random();
-     int countGrain = 0;
 
+//Wheat, implements IWheat, which extends Comparable (Interfaces/Generalization/Overwriting)
+public class Wheat implements IWheat {
+     private Random rand = new Random();
+     private int countGrain = 0;
+
+     //Initializes new Wheat with random grain count (pseudo-random)
      public Wheat(){
          int grainCount = rand.nextInt(500) + 100;
      }
 
+     @Override
      public int getGrainCount(){
           return countGrain;
      }

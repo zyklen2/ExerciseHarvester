@@ -1,9 +1,8 @@
 package Harvester;
 import Core.IData;
 import Core.IPosition;
-import Field.Field;
+import Field.IField;
 import Field.IWheat;
-import Field.Wheat;
 import java.util.List;
 import java.util.Map;
 import Drone.Drone;
@@ -21,7 +20,7 @@ public class Harvester implements IHarvester {
     private IGrindSystem theGrindSystem = new GrindSystem();
     private int posX=0;
     private int posY=0;
-    FieldManagementComputer theManagementComputer;
+    private IFieldManagementComputer theManagementComputer;
 
     public Harvester(float length, float height, float width, float weight,Drone theDrone) {
         this.length = length;
@@ -72,7 +71,7 @@ public class Harvester implements IHarvester {
     }
 
     @Override
-    public void letDroneScanField(Field field){
+    public void letDroneScanField(IField field){
         fieldData= theManagementComputer.ScanFieldAndAnalyse(field);
     }
 

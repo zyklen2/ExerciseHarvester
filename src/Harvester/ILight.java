@@ -1,6 +1,6 @@
 package Harvester;
 
-public interface ILight {
+interface ILight {
     boolean isOnOff();
 
     void setOnOff(boolean onOff);

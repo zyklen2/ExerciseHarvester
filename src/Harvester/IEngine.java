@@ -1,5 +1,5 @@
 package Harvester;
 
-public interface IEngine {
+interface IEngine {
     int getHorsePower();
 }

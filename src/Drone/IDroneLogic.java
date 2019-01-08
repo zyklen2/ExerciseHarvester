@@ -4,9 +4,10 @@ import Core.IPosition;
 import Field.IField;
 import Field.IWheat;
 
-import java.util.List;
 import java.util.Map;
 
-public interface IDroneLogic {
+//Interface with methods for scanning field: projecting 2D array of IWheat to Map<IPosition, IWheat> (Datastructure)
+interface IDroneLogic {
     Map<IPosition, IWheat> scanField(IField field);
+    Map<IPosition, IWheat> scanField(IWheat[][] wheatArray);
 }
