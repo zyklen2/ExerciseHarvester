@@ -17,8 +17,8 @@ import java.util.stream.Collectors;
 
 public class FieldManagementComputer {
     private IDrone theDrone;
-    public FieldManagementComputer() {
-        theDrone = new Drone(100);
+    public FieldManagementComputer(Drone theDrone) {
+        this.theDrone=theDrone;
     }
 
     public IData ScanFieldAndAnalyse(IField field){
