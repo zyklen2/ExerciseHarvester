@@ -18,7 +18,7 @@ public class Harvester implements IHarvester {
     private IGrindSystem theGrindSystem = new GrindSystem();
     private int posX=0;
     private int posY=0;
-    IFieldManagementComputer theManagementComputer;
+    private IFieldManagementComputer theManagementComputer;
 
     public Harvester(float length, float height, float width, float weight) {
         this.length = length;

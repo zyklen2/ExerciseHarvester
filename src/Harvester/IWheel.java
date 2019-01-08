@@ -1,6 +1,6 @@
 package Harvester;
 
-public interface IWheel {
+interface IWheel {
      float getWidth();
 
      void setWidth(float width);

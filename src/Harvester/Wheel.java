@@ -1,10 +1,10 @@
 package Harvester;
 
 public class Wheel implements IWheel{
-    float width = 0;
-    float radius = 0;
-    boolean pumpedUp = false;
-    float pumpedUpBar = 0;
+    private float width = 0;
+    private float radius = 0;
+    private boolean pumpedUp = false;
+    private float pumpedUpBar = 0;
 
     public Wheel(float width, float radius, boolean pumpedUp, float pumpedUpBar) {
         this.width = width;

@@ -7,10 +7,10 @@ import Field.IWheat;
 import java.util.Map;
 
 public class Drone implements IDrone {
-    int posX=0;
-    int posY=0;
-    float batteryPercentage=0;
-    DroneLogic theDroneLogic = new DroneLogic();
+    private int posX=0;
+    private int posY=0;
+    private float batteryPercentage=0;
+    private DroneLogic theDroneLogic = new DroneLogic();
 
     public Drone(float batteryPercentage){
         this.batteryPercentage=batteryPercentage;

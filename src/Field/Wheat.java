@@ -2,8 +2,8 @@ package Field;
 
 import java.util.Random;
 public class Wheat implements IWheat {
-     Random rand = new Random();
-     int countGrain = 0;
+     private Random rand = new Random();
+     private int countGrain = 0;
 
      public Wheat(){
          int grainCount = rand.nextInt(500) + 100;

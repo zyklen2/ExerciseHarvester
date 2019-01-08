@@ -13,6 +13,7 @@ import Field.WheatSorter;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class FieldManagementComputer implements IFieldManagementComputer {
@@ -37,9 +38,10 @@ public class FieldManagementComputer implements IFieldManagementComputer {
     @Override
     public IWheat findWheatByPos(int posX, int posY, Map<IPosition, IWheat> wheatMap){
         Position pos = new Position(posX, posY);
-        return wheatMap.entrySet().stream()
+        Optional<Map.Entry<IPosition,IWheat>> posWheatResult =  wheatMap.entrySet().stream()
                 .filter(entry -> entry.getKey().getHash() == pos.getHash())
-                .findFirst().get().getValue();
+                .findFirst();
+        return posWheatResult == null ? null : posWheatResult.get().getValue();
     }
 
 }

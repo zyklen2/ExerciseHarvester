@@ -6,5 +6,5 @@ import java.util.Comparator;
 import java.util.Map;
 
 //Extends Comparator, deriving non-abstract classes must implement compare-method (Interfaces/Generalization/Sorting)
-public interface IPositionSorter extends Comparator<Map.Entry<IPosition, IWheat>> {
+interface IPositionSorter extends Comparator<Map.Entry<IPosition, IWheat>> {
 }

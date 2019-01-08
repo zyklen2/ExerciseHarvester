@@ -1,5 +1,5 @@
 package Harvester;
 
-public class DrivingEssentialLights extends Light{
+class DrivingEssentialLights extends Light{
 
 }

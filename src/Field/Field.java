@@ -1,21 +1,19 @@
 package Field;
 
-import java.util.stream.Stream;
-
-public class Field implements IField{
+public class Field implements IField {
     private final int fieldSizeX;
     private final int fieldSizeY;
     private IWheat[][] wheatArray = null;
 
-    public Field(int fieldSizeX,int fieldSizeY){
+    public Field(int fieldSizeX, int fieldSizeY) {
         this.fieldSizeX = fieldSizeX;
-        this.fieldSizeY = fieldSizeX;
+        this.fieldSizeY = fieldSizeY;
         wheatArray = new IWheat[fieldSizeX][fieldSizeY];
-        for(int i=0;i<fieldSizeX;i++){
+        for (int i = 0; i < fieldSizeX; i++) {
             IWheat[] yWheatArray = new IWheat[fieldSizeY];
-            for(int j=0;j<fieldSizeY;j++){
+            for (int j = 0; j < fieldSizeY; j++) {
                 Wheat newWheat = new Wheat();
-                yWheatArray[j]= newWheat;
+                yWheatArray[j] = newWheat;
             }
             wheatArray[i] = yWheatArray;
         }

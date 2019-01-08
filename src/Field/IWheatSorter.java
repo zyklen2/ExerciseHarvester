@@ -5,5 +5,5 @@ import Core.IPosition;
 import java.util.Comparator;
 import java.util.Map;
 
-public interface IWheatSorter extends Comparator<Map.Entry<IPosition, IWheat>> {
+interface IWheatSorter extends Comparator<Map.Entry<IPosition, IWheat>> {
 }
