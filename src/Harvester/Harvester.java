@@ -33,7 +33,7 @@ public class Harvester implements IHarvester {
             Light newLight = new Light(false);
             lights[i]=newLight;
         }
-
+        theManagementComputer = new FieldManagementComputer();
     }
 
     @Override

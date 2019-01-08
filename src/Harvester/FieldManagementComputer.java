@@ -41,7 +41,7 @@ public class FieldManagementComputer implements IFieldManagementComputer {
         Optional<Map.Entry<IPosition,IWheat>> posWheatResult =  wheatMap.entrySet().stream()
                 .filter(entry -> entry.getKey().getHash() == pos.getHash())
                 .findFirst();
-        return posWheatResult == null ? null : posWheatResult.get().getValue();
+        return posWheatResult == null || posWheatResult.isEmpty() ? null : posWheatResult.get().getValue();
     }
 
 }
