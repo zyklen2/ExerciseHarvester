@@ -15,12 +15,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class FieldManagementComputer {
+public class FieldManagementComputer implements IFieldManagementComputer {
     private IDrone theDrone;
     public FieldManagementComputer() {
         theDrone = new Drone(100);
     }
 
+    @Override
     public IData ScanFieldAndAnalyse(IField field){
         Map<IPosition, IWheat> theFieldMap = theDrone.scanField(field);
         List<IWheat> theWheatList = sortWheatField(theFieldMap);
@@ -33,7 +34,8 @@ public class FieldManagementComputer {
                 .collect(Collectors.toList());
     }
 
-    public IWheat findWheatByPos(int posX, int posY, Map<IPosition, IWheat> wheatMap ){
+    @Override
+    public IWheat findWheatByPos(int posX, int posY, Map<IPosition, IWheat> wheatMap){
         Position pos = new Position(posX, posY);
         return wheatMap.entrySet().stream()
                 .filter(entry -> entry.getKey().getHash() == pos.getHash())
