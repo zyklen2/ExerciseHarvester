@@ -10,6 +10,6 @@ public class Main {
         Drone newDrone = new Drone(100);
         IHarvester newHarvester = new Harvester(100,50,30,2,newDrone);
         newHarvester.letDroneScanField(newField);
-        System.out.println(newHarvester.getHeight());
+        System.out.println(newHarvester.getFieldData().toString());
     }
 }

@@ -50,4 +50,9 @@ public class Position implements IPosition {
     public int getHash(){
         return (7 + posX)*7 + posY;
     }
+
+    @Override
+    public String toString(){
+        return "x: " + getPosX() + " y: " + getPosY();
+    }
 }
