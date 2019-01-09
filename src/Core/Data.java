@@ -5,7 +5,8 @@ import Field.IWheat;
 import java.util.List;
 import java.util.Map;
 
-public class Data implements IData {
+public class Data implements IData {//Interface als zugang für die Öffentlichen Methoden
+    //Erstellung einer neuen Datenstruktur "Data" um die Map des Feldes und die Liste der Weizenpflanzen speichern zu können
     private List<IWheat> sortedWheatList;
     private Map<IPosition, IWheat> fieldMap;
 

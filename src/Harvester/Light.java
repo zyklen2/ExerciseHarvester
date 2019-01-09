@@ -1,6 +1,6 @@
 package Harvester;
 
-public class Light implements ILight {
+public class Light implements ILight {//Generalisierung zu DrivingEssentialLights
     boolean onOff=false;
 
     public Light(){}
