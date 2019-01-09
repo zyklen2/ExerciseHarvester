@@ -9,7 +9,7 @@ public class Wheat implements IWheat {
 
      //Initializes new Wheat with random grain count (pseudo-random)
      public Wheat(){
-         int grainCount = rand.nextInt(500) + 100;
+         countGrain = rand.nextInt(500) + 100;
      }
 
      @Override
@@ -19,6 +19,11 @@ public class Wheat implements IWheat {
 
     @Override
     public int compareTo(IWheat otherWheat){
-         return this.getGrainCount() - otherWheat.getGrainCount();
+         return   this.getGrainCount() - otherWheat.getGrainCount();
+    }
+
+    @Override
+    public String toString(){
+         return "Grains: " + getGrainCount();
     }
 }

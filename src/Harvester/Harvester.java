@@ -76,7 +76,7 @@ public class Harvester implements IHarvester {
     }
 
     @Override
-    public List<IWheat> getSortedField(){
+    public List<Map.Entry<IPosition,IWheat>> getSortedField(){
         return fieldData.getSortedWheatList();
     }
 

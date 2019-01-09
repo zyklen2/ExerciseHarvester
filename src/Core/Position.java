@@ -38,7 +38,7 @@ public class Position implements IPosition {
         if(this.getHash() == otherPos.getHash()){
             return 0;
         }else {
-            int ret = otherPos.getPosX() + otherPos.getPosY() - this.getPosX() - this.getPosY();
+            int ret =  this.getPosX() + this.getPosY() - otherPos.getPosX() - otherPos.getPosY();
             if(ret == 0){
                 return Integer.MIN_VALUE;
             }
@@ -49,5 +49,10 @@ public class Position implements IPosition {
     //Gets int-hash from object
     public int getHash(){
         return (7 + posX)*7 + posY;
+    }
+
+    @Override
+    public String toString(){
+        return "x: " + getPosX() + " y: " + getPosY();
     }
 }
